@@ -14,8 +14,12 @@ model.fit(x=scaled_train_samples, y=train_labels,validation_split=0.1, batch_siz
 predictions = model.predict(x=scaled_test_samples,batch_size=10,verbose=0)
 
 
-#returns which label with highest probability 
+#returns which label with highest probability
 rounded_predictions = np.argmax(predictions, axis=-1)
 
 for i in rounded_predictions:
     print(i)
+
+#creates a confusion matrix by passing the true labels and predicted labels. Creates plot labels for the labels
+#will only work on jupiter notebook
+plot_confusion_matrix(cm=cm, classes=cm_plot_labels, title='Confusion Matrix')
