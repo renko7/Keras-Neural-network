@@ -16,3 +16,6 @@ model = Sequential([
 
 model.summary()
 
+
+
+
